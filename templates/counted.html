@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>counted</title>
+
+
+
+</head>
+<body>
+<h1>words counted</h1>
+
+
+<h3>you have typed {{len}} words</h3>
+		<div class="header">
+			<ul list-style="none">
+				<li list-style="none">home</li>
+				<li>about</li>
+				<li>count</li>
+				<li>why us!</li>
+			</ul>
+
+		</div>
+		<form action="{% url 'count' %}">
+				<textarea rows="20" cols="70" name ="fulltextarea"></textarea><br>
+				<input type="submit" value="count"/>
+			</div>
+		</form>
+
+		<div>
+			<p>graph will go here</p>
+			{{queryset}}
+			{{worddictionary}}
+			{% for word, value in worddictionary.items %}<br>
+			{{word}} = {{value}}<br>
+			{% endfor %}
+
+		</div>
+
+</body>
+</html>
